@@ -1,0 +1,109 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Bachelor's & Master's Thesis Template             %%
+%% Copyleft by Artur M. Brodzki & Piotr Woźniak      %%
+%% Faculty of Electronics and Information Technology %%
+%% Warsaw University of Technology, 2019-2020        %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[
+    left=2.5cm,         % Sadly, generic margin parameter
+    right=2.5cm,        % doesnt't work, as it is
+    top=2.5cm,          % superseded by more specific
+    bottom=3cm,         % left...bottom parameters.
+    bindingoffset=6mm,  % Optional binding offset.
+    nohyphenation=false % You may turn off hyphenation, if don't like.
+]{eiti/eiti-thesis}
+
+\langeng % Dla języka polskiego mamy \langpol
+\graphicspath{{img/}}             % Katalog z obrazkami.
+\addbibresource{bibliografia.bib} % Plik .bib z bibliografią
+
+\begin{document}
+
+%--------------------------------------
+% Strona tytułowa
+%--------------------------------------
+\MasterThesis % Dla pracy inżynierskiej mamy \EngineerThesis
+\instytut{Computer Science}
+\kierunek{Computer Science}
+\specjalnosc{Information System Engineering}
+\title{
+    Trwały nośnik jako serwis do zarządzania dokumentami
+}
+\engtitle{ % Tytuł po angielsku do angielskiego streszczenia
+    Durable medium as a service for a document automation system
+}
+\author{Daniel Bigos}
+\album{277277}
+\promotor{dr inż. Jacek Wytrębowicz}
+\date{\the\year}
+\maketitle
+
+%--------------------------------------
+% Streszczenie po polsku
+%--------------------------------------
+\cleardoublepage % Zaczynamy od nieparzystej strony
+\input{tex/polish_abstract}
+%--------------------------------------
+% Streszczenie po angielsku
+%--------------------------------------
+\newpage
+\input{tex/english_abstract}
+%--------------------------------------
+% Oświadczenie o autorstwie
+%--------------------------------------
+\cleardoublepage  % Zaczynamy od nieparzystej strony
+\pagestyle{plain}
+\makeauthorship
+
+%--------------------------------------
+% Spis treści
+%--------------------------------------
+\cleardoublepage % Zaczynamy od nieparzystej strony
+\tableofcontents
+
+%--------------------------------------
+% Rozdziały
+%--------------------------------------
+\cleardoublepage % Zaczynamy od nieparzystej strony
+\pagestyle{headings}
+
+\input{tex/introduction}
+\input{tex/summary}
+
+%--------------------------------------------
+% Literatura
+%--------------------------------------------
+\cleardoublepage % Zaczynamy od nieparzystej strony
+\printbibliography
+
+%--------------------------------------------
+% Spisy (opcjonalne)
+%--------------------------------------------
+\newpage
+\pagestyle{plain}
+
+%--------------------------------------------
+% Akronimy (opcjonalne)
+%--------------------------------------------
+% //AB
+\vspace{0.8cm}
+\acronymlist
+% \acronym{PW}{Politechnika Warszawska}
+% \acronym{WEIRD}{ang. \emph{Western, Educated, Industrialized, Rich and Democratic}}
+
+%--------------------------------------------
+% Symbole (opcjonalne)
+%--------------------------------------------
+\listoffigurestoc     % Spis rysunków.
+\vspace{1cm}          % vertical space
+
+
+%--------------------------------------------
+% Tabele (opcjonalne)
+%--------------------------------------------
+\listoftablestoc      % Spis tabel.
+\vspace{1cm}          % vertical space
+
+
+\end{document}
